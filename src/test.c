@@ -9,9 +9,9 @@ uint32_t getFileLength(FILE * fptr)
 {
 	uint32_t		fileLength;
 	
-	fseek(fptr, SEEK_END, 0);
+	fseek(fptr, 0, SEEK_END);
 	fileLength = ftell(fptr);
-	fseek(fptr, SEEK_SET, 0);
+	fseek(fptr, 0, SEEK_SET);
 	
 	return fileLength;
 }
