@@ -50,16 +50,17 @@ int main(int argc, char *argv[])
 
 	fileLength = getFileLength(fptr);
 	
-	buffer = (char *)malloc(fileLength);
+	buffer = (char *)malloc(fileLength + 1);
 	
 	if (buffer == NULL) {
-		printf("Failed to allocate %u bytes for input file\n", fileLength);
+		printf("Failed to allocate %u bytes for input file\n", fileLength + 1);
 		exit(-1);
 	}
 	
 	printf("Reading %u bytes from file %s\n", fileLength, szSourceFile);
 	
 	bytesRead = fread(buffer, 1, fileLength, fptr);
+	buffer[bytesRead] = 0;
 	
 	fclose(fptr);
 	
