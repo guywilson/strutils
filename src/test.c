@@ -16,10 +16,10 @@ uint32_t getFileLength(FILE * fptr)
 	return fileLength;
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
-	char		szSourceFile[128];
-	char		szOutputFile[128];
+	char *		szSourceFile;
+	char *		szOutputFile;
 	char *		buffer;
 	
 	FILE *		fptr;
@@ -27,6 +27,19 @@ int main(void)
 	uint32_t	fileLength;
 	uint32_t	bytesRead;
 	uint32_t	bytesWritten;
+	
+	if (argc < 3) {
+		printf("Too few arguments supplied, expecting a source file name and output file name.\n");
+		exit(-1);
+	}
+	else if (argc == 3) {
+		szSourceFile = strdup(&argv[1][0]);
+		szOutputFile = strdup(&argv[2][0]);
+	}
+	else {
+		printf("Invalid number of arguents supplied.\n");
+		exit(-1);
+	}
 	
 	fptr = fopen(szSourceFile, "rt");
 	
