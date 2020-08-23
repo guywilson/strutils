@@ -40,7 +40,7 @@ int main(void)
 	buffer = (char *)malloc(fileLength);
 	
 	if (buffer == NULL) {
-		printf("Failed to allocate %lu bytes for input file\n", fileLength);
+		printf("Failed to allocate %u bytes for input file\n", fileLength);
 		exit(-1);
 	}
 	
@@ -50,7 +50,7 @@ int main(void)
 	
 	if (bytesRead != fileLength) {
 		printf(
-			"Failed to read %lu bytes of file %s, got %lu bytes instead\n", 
+			"Failed to read %u bytes of file %s, got %u bytes instead\n", 
 			fileLength, 
 			szSourceFile, 
 			bytesRead);
@@ -76,7 +76,7 @@ int main(void)
 	
 	if (bytesWritten != strlen(outputBuffer)) {
 		printf(
-			"Failed to write %lu bytes of file %s, wrote %lu bytes instead\n",
+			"Failed to write %lu bytes of file %s, wrote %u bytes instead\n",
 			strlen(outputBuffer),
 			szOutputFile,
 			bytesWritten);
