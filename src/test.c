@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 	
 	printf("Before trim: [%s]\n", buffer);
 	
-	char * outputBuffer = str_trim_trailing(buffer);
+	char * outputBuffer = str_trim(buffer);
 	
 	printf("After str_trim_trailing(): [%s]\n", outputBuffer);
 	
