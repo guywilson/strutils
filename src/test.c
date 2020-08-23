@@ -57,6 +57,8 @@ int main(int argc, char *argv[])
 		exit(-1);
 	}
 	
+	printf("Reading %u bytes from file %s\n", fileLength, szSourceFile);
+	
 	bytesRead = fread(buffer, 1, fileLength, fptr);
 	
 	fclose(fptr);

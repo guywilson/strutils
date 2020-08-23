@@ -13,7 +13,7 @@ DEP = dep
 LIB = lib
 
 # What is our target
-TARGET = su
+TARGET = strutils
 LIBTARGET = lib$(TARGET).so
 
 # Tools
