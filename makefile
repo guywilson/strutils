@@ -58,9 +58,9 @@ $(DEP)/%.d: ;
 -include $(DEPFILES)
 
 install: $(TARGET)
-	cp $(TARGET) /usr/local/bin
-	cp $(LIB)/$(LIBTARGET) /usr/local/lib
-	cp $(SOURCE)/strutils.h /usr/local/include
+	cp $(TARGET) $${HOME}/bin
+	cp $(LIB)/$(LIBTARGET) $${HOME}/lib
+	cp $(SOURCE)/strutils.h $${HOME}/include
 	
 clean:
 	rm -r $(BUILD)
